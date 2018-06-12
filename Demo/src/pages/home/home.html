@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar color="light">
+    <ion-title>
+      Inicio de Sesión
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div text-center>
+      <!--INPUT DE IMAGEN-->
+      <ion-img width="200px" height="200px" src="../../assets/imgs/mega.png"></ion-img>
+    </div>
+    <ion-list>
+      <!--INPUT DE USUARIO-->
+      <ion-item>
+          <ion-label floating>Usuario</ion-label>
+          <!--#USER PARA HACER REFERENCIA EN EL .TS-->
+          <ion-input type="text" #user></ion-input>
+      </ion-item>
+
+      <!--INPUT DE PASSWORD-->
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <!--#PASS PARA HACER REFERENCIA EN EL .TS-->
+        <ion-input type="password" #pass></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <div padding>
+      <button ion-button outline block (click)="Ingresar()">Ingresar</button>
+    </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="light">
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-footer>
