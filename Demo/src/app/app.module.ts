@@ -11,6 +11,7 @@ import { RutasPage } from '../pages/rutas/rutas';
 import { PresentacionPage } from '../pages/presentacion/presentacion';
 import { TabsPage } from '../pages/tabs/tabs';
 import { PerfilPage } from '../pages/perfil/perfil';
+import { MuestraPage } from "../pages/muestra/muestra";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PerfilPage } from '../pages/perfil/perfil';
     RutasPage,
     PresentacionPage,
     TabsPage,
-    PerfilPage
+    PerfilPage,
+    MuestraPage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,8 @@ import { PerfilPage } from '../pages/perfil/perfil';
     RutasPage,
     PresentacionPage,
     TabsPage,
-    PerfilPage
+    PerfilPage,
+    MuestraPage
   ],
   providers: [
     StatusBar,

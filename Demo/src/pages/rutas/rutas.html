@@ -10,9 +10,33 @@
     <ion-title>Rutas</ion-title>
   </ion-navbar>
 
+  <ion-searchbar
+    [(ngModel)]="myInput"
+    [showCancelButton]="shouldShowCancel"
+    (ionCancel)="onCancel($event)">
+  </ion-searchbar>
+
 </ion-header>
 
 
 <ion-content padding>
+  <ion-list>
+    <ion-list-header>
+      Guatemala
+    </ion-list-header>
+    <ion-item><button ion-item>Km. 5.5 zona 17 Carretera al Atlantico</button></ion-item>
+    <ion-item><button ion-item>Km. 13 ruta al Atlantico</button></ion-item>
+    <ion-item><button ion-item>Km. 12 Ruta al Atlántico</button></ion-item>
+  </ion-list>
 
+  <ion-list>
+    <ion-list-header>
+        MIXCO
+    </ion-list-header>
+    <ion-item><button ion-item>3ra. Calle 4-84 Zona 8 de Mixco, Por C.C. Plaza Mix</button></ion-item>
+    <ion-item><button ion-item>Cd. San Cristóbal salida a la 35 calle  Las Charcas</button></ion-item>
+    <ion-item><button ion-item>Km. 17 Ruta a la Antigua, antes del cruce a San Cris.</button></ion-item>
+    <ion-item><button ion-item>Km. 18 Ruta a la Antigua,  San Cristobal por Fundabiem (Mixqueña)</button></ion-item>
+    <ion-item><button ion-item>Km. 20 Ruta a la Antigua, saliendo de Ciudad San Cris.</button></ion-item>
+  </ion-list>
 </ion-content>
