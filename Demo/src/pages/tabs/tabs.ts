@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 import { DisponibilidadPage } from "../disponibilidad/disponibilidad";
-import { RutasPage } from "../rutas/rutas";
 import { PresentacionPage } from "../presentacion/presentacion";
 import { PerfilPage } from "../perfil/perfil";
 @IonicPage()
@@ -13,7 +12,6 @@ export class TabsPage {
 
   //SE HACE REFERENCIA AL NOMBRE USADO EN LA VISTA
   dispo= DisponibilidadPage;
-  rutas = RutasPage;
   presentacion = PresentacionPage;
   perfil = PerfilPage;
 

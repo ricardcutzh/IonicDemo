@@ -25,18 +25,20 @@
       </div>
     </ion-card-header>
     <ion-card-content>
-      <h2>Porcentaje Disponible: 21%</h2>
-      <br>
-      <h2>Número de Caras: 57</h2>
+      <div *ngFor="let unipolar of unipolares">
+        <div text-center>
+          <h2>Número de Caras: {{unipolar.NumCaras}}</h2>
+        </div>
+      </div>
       <br>
       <div text-center>
         <ion-grid>
           <ion-row>
             <ion-col col-6>
-              <button ion-button (click)="verDetalle('Unipolares', 'Entrada')" color="dark" outline full>Ver Entradas</button>
+              <button ion-button (click)="verDetalle('Unipolares', 'Entrada')" color="dark" outline full>Caras Entrando</button>
             </ion-col>
             <ion-col col-6>
-              <button ion-button (click)="verDetalle('Unipolares', 'Salida')" color="dark" outline full>Ver Salidas</button>
+              <button ion-button (click)="verDetalle('Unipolares', 'Salida')" color="dark" outline full>Caras Saliendo</button>
             </ion-col>
           </ion-row>
         </ion-grid>  
@@ -51,18 +53,20 @@
         </div>
       </ion-card-header>
       <ion-card-content>
-        <h2>Porcentaje Disponible: 23%</h2>
-        <br>
-        <h2>Número de Caras: 63</h2>
+        <div *ngFor="let convencional of convencionales">
+          <div text-center>
+            <h2>Número de Caras: {{convencional.NumCaras}}</h2>
+          </div>
+        </div>
         <br>
         <div text-center>
           <ion-grid>
             <ion-row>
               <ion-col col-6>
-                <button ion-button (click)="verDetalle('Convencionales', 'Entrada')" color="dark" outline full>Ver Entradas</button>
+                <button ion-button (click)="verDetalle('Convencionales', 'Entrada')" color="dark" outline full>Caras Entrando</button>
               </ion-col>
-              <ion-col col-6s>
-                <button ion-button (click)="verDetalle('Convencionales', 'Salida')" color="dark" outline full>Ver Salidas</button>
+              <ion-col col-6>
+                <button ion-button (click)="verDetalle('Convencionales', 'Salida')" color="dark" outline full>Caras Saliendo</button>
               </ion-col>
             </ion-row>
           </ion-grid>  
@@ -77,18 +81,20 @@
         </div>
       </ion-card-header>
       <ion-card-content>
-        <h2>Porcentaje Disponible: 13%</h2>
-        <br>
-        <h2>Número de Caras: 22</h2>
+        <div *ngFor="let pasacalle of pasacalles">
+          <div text-center>
+            <h2>Número de Caras: {{pasacalle.NumCaras}}</h2>
+          </div>
+        </div>
         <br>
         <div text-center>
           <ion-grid>
             <ion-row>
               <ion-col col-6>
-                <button ion-button (click)="verDetalle('Pasarelas y Pasacalles', 'Entrada')" color="dark" outline full>Ver Entradas</button>
+                <button ion-button (click)="verDetalle('Pasarelas y Pasacalles', 'Entrada')" color="dark" outline full>Caras Entrando</button>
               </ion-col>
-              <ion-col col-6s>
-                <button ion-button (click)="verDetalle('Pasarelas y Pasacalles', 'Salida')" color="dark" outline full>Ver Salidas</button>
+              <ion-col col-6>
+                <button ion-button (click)="verDetalle('Pasarelas y Pasacalles', 'Salida')" color="dark" outline full>Caras Saliendo</button>
               </ion-col>
             </ion-row>
           </ion-grid>  
