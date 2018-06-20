@@ -6,19 +6,27 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="blue">
     <ion-title>Rutas</ion-title>
   </ion-navbar>
 
   <ion-searchbar
-    [(ngModel)]="myInput"
-    [showCancelButton]="shouldShowCancel"
-    (ionCancel)="onCancel($event)">
+    placeholder="Buscar por Municipio o Departamento"
+    [(ngModel)]="queryText"
+    (ionInput)="actualizarLista()">
   </ion-searchbar>
 
 </ion-header>
-
-
-<ion-content padding>
   
+<ion-content padding>
+  <div *ngFor="let dato of datos">
+    <ion-list>
+      <ion-list-header color="light">
+        {{dato[0].region}}
+      </ion-list-header>
+      <div *ngFor="let propiedad of dato">
+          <button ion-item (click)="verDireccion(propiedad.Departamento, propiedad.Municipio)">{{propiedad.Departamento}}, {{propiedad.Municipio}}</button>
+      </div>
+    </ion-list>
+  </div>
 </ion-content>

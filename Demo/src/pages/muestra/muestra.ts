@@ -18,15 +18,17 @@ export class MuestraPage {
   tipoValla : string;
   tipoEstado : string;
   presentado : string;
+  municipio : string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.tipoValla = this.navParams.get('tvalla');
     this.tipoEstado = this.navParams.get('testado');
-    if(this.tipoEstado == "Entrada")
+    this.municipio = this.navParams.get('municipio');
+    if(this.tipoEstado == "Entradas")
     {
       this.presentado = "primary";
     }
-    else if(this.tipoEstado == "Salida"){
+    else if(this.tipoEstado == "Salidas"){
       this.presentado = "danger";
     }
   }

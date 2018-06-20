@@ -74,11 +74,32 @@ export class DispoProvider {
         "region":"Norte",
         "Departamento": "Baja Verapaz",
         "Municipio": "Granados"
+      },
+      {
+        "region":"Central",
+        "Departamento":"Chimaltenango",
+        "Municipio":"El Tejar"
+      },
+      {
+        "region":"Central",
+        "Departamento":"Sacatepequez",
+        "Municipio":"Antigua Guatemala"
+      },
+      {
+        "region":"Central",
+        "Departamento":"Escuintla",
+        "Municipio":"Iztapa"
       }
     ];
+    //DATA QUE SE VA A MANEJAR
+    var data = [];
+    //AGRUPACION ACORDE DE A LA REGION
     var agrupado = _.groupBy(datos, "region");
-    console.log(agrupado.Norte);
-    return datos;
+    _.forEach(agrupado, function(value){
+      //METIENDO EN LA DATA PARA PODER RETORNARLOS
+      data.push(value);
+    });
+    return data;
   }
   
   
