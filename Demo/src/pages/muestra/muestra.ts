@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { DispoProvider } from '../../providers/dispo/dispo';
 
 /**
  * Generated class for the MuestraPage page.
@@ -15,26 +16,28 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MuestraPage {
   //http://www.filltext.com/KfgRZ/?rows=20&pretty=true&code={randomNumberLength|10}&ancho={numberRange|10,%2020}&alto={numberRange|2,%205}&direccion={streetAddress}&municipio={city}&material={lorem|2}
-  tipoValla : string;
-  tipoEstado : string;
-  presentado : string;
-  municipio : string;
+  tipoValla: string;
+  tipoEstado: string;
+  presentado: string;
+  municipio: string;
+  datos;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public provider: DispoProvider) {
     this.tipoValla = this.navParams.get('tvalla');
     this.tipoEstado = this.navParams.get('testado');
     this.municipio = this.navParams.get('municipio');
-    if(this.tipoEstado == "Entradas")
-    {
+    if (this.tipoEstado == "Entradas") {
       this.presentado = "primary";
     }
-    else if(this.tipoEstado == "Salidas"){
+    else if (this.tipoEstado == "Salidas") {
       this.presentado = "danger";
     }
+    
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MuestraPage');
+    console.log('ionViewDidLoad cargando vallas');
+    this.datos = this.provider.obtenerEntradasLugar(2);
   }
 
 }
