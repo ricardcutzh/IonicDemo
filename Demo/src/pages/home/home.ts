@@ -66,7 +66,8 @@ export class HomePage {
     //this.nativo();
     const pr = await this.gp.login({
       'webClientId':'55061482212-if2hs6c0rrskehvjllprnc116fr3krdh.apps.googleusercontent.com',
-      'offline':true
+      'offline':true,
+      'scopes':'profile email'
     }).then(res=>{
       this.user = res;
       firebase.auth().signInWithCredential(firebase.auth.GoogleAuthProvider.credential(res.idToken))
