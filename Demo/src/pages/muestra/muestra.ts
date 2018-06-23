@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import * as _ from "lodash";
+import { DispoProvider } from '../../providers/dispo/dispo';
 
 /**
  * Generated class for the MuestraPage page.
@@ -19,8 +21,10 @@ export class MuestraPage {
   tipoEstado : string;
   presentado : string;
   municipio : string;
+  queryText : string;
+  datos;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public provide:DispoProvider) {
     this.tipoValla = this.navParams.get('tvalla');
     this.tipoEstado = this.navParams.get('testado');
     this.municipio = this.navParams.get('municipio');
@@ -35,6 +39,24 @@ export class MuestraPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MuestraPage');
+    this.datos = this.provide.obtenerRutas();
   }
+
+  actualizarLista()
+  {
+    //refrescando la lista
+    this.datos = this.provide.obtenerRutas();
+    let queryMinus = this.queryText.toLowerCase();
+    let Filtro = [] = _.filter(this.datos, function(t){
+      if(t.codigo.toLowerCase().includes(queryMinus) || t.ubicacion.toLowerCase().includes(queryMinus))
+      {
+        return true;
+      }
+      return false;
+    });
+    this.datos = Filtro;
+  }
+
+
 
 }

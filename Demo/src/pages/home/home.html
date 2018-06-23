@@ -8,29 +8,45 @@
 
 <ion-content padding>
     <div text-center>
-      <!--INPUT DE IMAGEN-->
-      <ion-img width="200px" height="200px" src="../../assets/imgs/mega.png"></ion-img>
+      <!--INPUT DE IMAGEN https://drive.google.com/file/d/1SfS5_qjO4PiCquwXo880zNJY0dlkpMZ0/view?usp=sharing -->
+      <ion-img width="200px" height="200px" src="http://docs.google.com/uc?id=1SfS5_qjO4PiCquwXo880zNJY0dlkpMZ0"></ion-img>
     </div>
-    <ion-list>
-      <!--INPUT DE USUARIO-->
-      <ion-item>
-          <ion-label floating>Usuario</ion-label>
-          <!--#USER PARA HACER REFERENCIA EN EL .TS-->
-          <ion-input type="text" #user></ion-input>
-      </ion-item>
 
-      <!--INPUT DE PASSWORD-->
-      <ion-item>
-        <ion-label floating>Password</ion-label>
-        <!--#PASS PARA HACER REFERENCIA EN EL .TS-->
-        <ion-input type="password" #pass></ion-input>
-      </ion-item>
+    <div *ngIf="esWeb">
+      <ion-list>
+        <!--INPUT DE USUARIO-->
+        <ion-item>
+            <ion-label floating>Usuario</ion-label>
+            <!--#USER PARA HACER REFERENCIA EN EL .TS-->
+            <ion-input type="text" #user></ion-input>
+        </ion-item>
 
-    </ion-list>
-
-    <div padding>
-      <button ion-button outline block (click)="Ingresar()">Ingresar</button>
+        <!--INPUT DE PASSWORD-->
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <!--#PASS PARA HACER REFERENCIA EN EL .TS-->
+          <ion-input type="password" #pass></ion-input>
+        </ion-item>
+      </ion-list>
+      <div padding>
+        <button ion-button outline block (click)="Ingresar()">Ingresar</button>
+      </div> 
     </div>
+
+    <div *ngIf="esWeb==false && estaLogueado==false">
+      <div padding>
+        <button full ion-button outline block (click)="logIn()"><ion-icon name="logo-google"></ion-icon> Verificar Credenciales</button>
+      </div> 
+    </div>
+    
+    <div *ngIf="estaLogueado">
+      <div padding>
+        <button ion-button outline block (click)="entrar()"><ion-icon name="ios-checkmark-circle"></ion-icon>Iniciar</button>
+        <br>
+        <button ion-button outline block (click)="logOut()"><ion-icon name="ios-log-out"></ion-icon> Desconectarse de Aplicación </button>
+      </div> 
+    </div>
+
 </ion-content>
 
 <ion-footer>

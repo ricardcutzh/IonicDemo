@@ -3,5 +3,5 @@
   <!--EL NOMBRE EN ROOT ES EL NOMBRE QUE SE LE DEBE DE DAR EN EL .TS-->
   <ion-tab [root]="dispo" tabTitle="Disponibilidad" tabIcon="ios-podium"></ion-tab>
   <ion-tab [root]="presentacion" tabTitle="Presentación" tabIcon="ios-create"></ion-tab>
-  <ion-tab [root]="perfil" tabTitle="Perfil" tabIcon="ios-contact"></ion-tab>
+  <ion-tab [root]="perfil" tabTitle="Perfil" [rootParams]="usuario" tabIcon="ios-contact"></ion-tab>
 </ion-tabs>

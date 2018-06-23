@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Events } from "ionic-angular";
+import { GooglePlus } from "@ionic-native/google-plus";
 /**
  * Generated class for the PerfilPage page.
  *
@@ -14,8 +15,10 @@ import { Events } from "ionic-angular";
   templateUrl: 'perfil.html',
 })
 export class PerfilPage {
-
+  gp: GooglePlus;
+  usuario:any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public events: Events) {
+    this.usuario = navParams.get('user');
   }
 
   ionViewDidLoad() {

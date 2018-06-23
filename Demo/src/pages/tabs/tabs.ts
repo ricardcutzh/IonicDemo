@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
+import { IonicPage, NavController,NavParams, Events } from 'ionic-angular';
 import { DisponibilidadPage } from "../disponibilidad/disponibilidad";
 import { PresentacionPage } from "../presentacion/presentacion";
 import { PerfilPage } from "../perfil/perfil";
@@ -15,12 +15,17 @@ export class TabsPage {
   presentacion = PresentacionPage;
   perfil = PerfilPage;
 
-  constructor(public events: Events, public navCtrl : NavController)
+  usuario:any = {}; 
+
+  constructor(public events: Events, public navCtrl : NavController, public params:NavParams)
   {
     //PARA QUE LA TAB PAGE SEPA QUE TIENE QUE REGRESAR AL INICIO
     events.subscribe('user:logout', ()=>{
       this.navCtrl.popToRoot();
     });
+    this.usuario = {
+      user: this.params.get('us')
+    };
   }
 
 }

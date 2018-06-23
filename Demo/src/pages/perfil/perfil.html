@@ -12,22 +12,18 @@
 
 </ion-header>
 
-
 <ion-content padding>
-  <ion-card>
-    <ion-card-header>
-      <div text-center>
-        Datos de Usuario
-      </div>
-    </ion-card-header>
-    <ion-card-content>
-      <div text-center>
-        <h1>Nombre de Usuario</h1>
-      </div>
-      <br>
-      <div text-center>
-          <button ion-button outline full color="danger" (click)="LogOut()">Cerrar Sesión</button>
-      </div>
-    </ion-card-content>
-  </ion-card>
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="{{usuario.imageUrl}}">
+      </ion-avatar>
+      <h2>Nombre: {{usuario.displayName}}</h2>
+      <h3>Email: {{usuario.email}}</h3>
+    </ion-item>
+  </ion-list>
+  <br>
+  <div text-center>
+    <button ion-button outline full color="danger" (click)="LogOut()">Cerrar Sesión</button>
+  </div>  
 </ion-content>

@@ -102,6 +102,61 @@ export class DispoProvider {
     return data;
   }
   
+
+  obtenerRutas()
+  {
+    var datos = [
+      {
+        "codigo":"VU-03MTRGT",
+        "alto": "5",
+        "ancho": "10",
+        "acabado": "Bolsas de 15 ctm",
+        "ubicacion": "Km. 5.5 zona 17 Carretera al Atlantico ",
+        "url": "http://docs.google.com/uc?id=1igGKsqsUHdxlNDqClB9Kv-cATQbMo37C"
+      },
+      {
+        "codigo":"VU-02MTRGT",
+        "alto": "4",
+        "ancho": "15",
+        "acabado": "Bolsas de 15 ctm",
+        "ubicacion": "Ubicación: Km. 12 Ruta al Atlántico",
+        "url": "http://docs.google.com/uc?id=1INPeAjCcNwvFMskmqz_h43z5Nl_oyKr-"
+      },
+      {
+        "codigo":"VU-01MTRGT",
+        "alto": "4",
+        "ancho": "10",
+        "acabado": "Bolsas de 15 ctm.",
+        "ubicacion": "Km. 12 Ruta al Atlántico",
+        "url": "http://docs.google.com/uc?id=11ZqJ3rjdkXXg82hFnAZjlbjb8DDCcLg_"
+      },
+      {
+        "codigo":"VU-04MTRGT",
+        "alto": "5",
+        "ancho": "12",
+        "acabado": "Bolsas de 15 ctm.",
+        "ubicacion": "3ra. Calle 4-84 Zona 8 de Mixco, Por C.C. Plaza Mix",
+        "url": "http://docs.google.com/uc?id=1-ohmMOUSTAGU4z05ak6hhXns75SWZhRD"
+      },
+      {
+        "codigo":"VU-05MTRGT",
+        "alto": "4",
+        "ancho": "20",
+        "acabado": "Bolsas de 15 ctm.",
+        "ubicacion": "Cd. San Cristóbal salida a la 35 calle  Las Charcas",
+        "url": "http://docs.google.com/uc?id=1_pALi7MHnjybftD3V7oKE_KvPfsOpI9q"
+      },
+      {
+        "codigo":"VU-06MTRGT",
+        "alto": "4",
+        "ancho": "20",
+        "acabado": "Bolsas de 15 ctm.",
+        "ubicacion": "Km. 17 Ruta a la Antigua, antes del cruce a San Cris.",
+        "url": "http://docs.google.com/uc?id=1Y1DyGnhE46B3_TJ_YHg94N7rTRluGyY-"
+      }
+    ];
+    return datos;
+  }
   
 
 }

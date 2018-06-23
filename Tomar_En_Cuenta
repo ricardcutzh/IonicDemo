@@ -1,0 +1,9 @@
+------------------------------------------------
+|     CONSIDERACIONDE DE LA APLICACION         |
+------------------------------------------------
+| *- SE INSTALO TYPINGS PARA PODER HACER USO DE|
+|    LODASH                                    |
+| *- SE INSTALO GRADLE PARA ANDROID            |
+| *- SE CONFIGURO CON EL PATH PARA PODER       |
+| ACCEDER A ANDROID Y ADB COMO COMANDOS        |
+*----------------------------------------------*

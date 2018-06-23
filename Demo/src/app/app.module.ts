@@ -14,6 +14,19 @@ import { PerfilPage } from '../pages/perfil/perfil';
 import { MuestraPage } from "../pages/muestra/muestra";
 import { DispoProvider } from '../providers/dispo/dispo';
 import { HttpClientModule } from "@angular/common/http";
+import { GooglePlus } from "@ionic-native/google-plus";
+import { AngularFireModule } from "angularfire2";
+import firebase from "firebase";
+
+export const firebaseConfig = {
+    apiKey: "AIzaSyATdIknMzUx3QNn0d0qV1SvlGd5H73_GKc",
+    authDomain: "dispo-demo.firebaseapp.com",
+    databaseURL: "https://dispo-demo.firebaseio.com",
+    projectId: "dispo-demo",
+    storageBucket: "dispo-demo.appspot.com",
+    messagingSenderId: "55061482212"
+}
+firebase.initializeApp(firebaseConfig);
 
 @NgModule({
   declarations: [
@@ -30,6 +43,7 @@ import { HttpClientModule } from "@angular/common/http";
     BrowserModule,
     //IMPORTACION DEL HTTP MODULO
     HttpClientModule,
+    AngularFireModule.initializeApp(firebaseConfig),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -47,7 +61,8 @@ import { HttpClientModule } from "@angular/common/http";
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DispoProvider
+    DispoProvider,
+    GooglePlus
   ]
 })
 export class AppModule {}

@@ -11,49 +11,27 @@
   </ion-navbar>
 
   <ion-searchbar
-    [(ngModel)]="myInput"
-    [showCancelButton]="shouldShowCancel"
-    (ionCancel)="onCancel($event)">
+    placeholder="Código o Dirección..."
+    [(ngModel)]="queryText"
+    (ionInput)="actualizarLista()">
   </ion-searchbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <ion-card color="{{presentado}}">
-    <img src="https://guatemalamarketing.files.wordpress.com/2014/12/valla6.jpg">
-    <ion-card-content>
-      <ion-card-title>
-        VU-01MTRGT
-      </ion-card-title>
-      <p>Medidas: 9.00 x 4.00 mts</p>
-      <p>Acabado: Bolsas de 15 ctm. </p>
-      <p>Ubicación: Km. 5.5 zona 17 Carretera al Atlantico</p>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card color="{{presentado}}">
-    <img src="../../assets/imgs/UNI1.JPG">
-    <ion-card-content>
-      <ion-card-title>
-        VU-02MTRGT
-      </ion-card-title>
-      <p>Medidas: 15.00 x 6.00 mts</p>
-      <p>Acabado: Bolsas de 15 ctm. </p>
-      <p>Ubicación: Km. 13 ruta al Atlantico </p>
-    </ion-card-content>
-  </ion-card>
-
-  <ion-card color="{{presentado}}">
-    <img src="../../assets/imgs/Uni2.jpeg">
-    <ion-card-content>
-      <ion-card-title>
-        VU-03MTRGT
-      </ion-card-title>
-      <p>Medidas: 10.00 x 4.00 mts</p>
-      <p>Acabado: Bolsas de 15 ctm. </p>
-      <p>Ubicación: Km. 12 Ruta al Atlánticoo</p>
-    </ion-card-content>
-  </ion-card>
-
+  <div *ngFor="let dato of datos">
+    <ion-card color="{{presentado}}">
+      <img src="{{dato.url}}">
+      <ion-card-content>
+        <ion-card-title>
+          {{dato.codigo}}
+        </ion-card-title>
+        <p>Medidas: {{dato.alto}} x {{dato.ancho}} mts</p>
+        <p>Acabado: {{dato.acabado}}</p>
+        <p>Ubicación: {{dato.ubicacion}}</p>
+        <p><button ion-button full color="secondary">Agregar a Presentación</button></p>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>
