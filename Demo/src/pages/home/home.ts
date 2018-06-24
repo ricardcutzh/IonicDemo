@@ -65,7 +65,7 @@ export class HomePage {
   {
     //this.nativo();
     const pr = await this.gp.login({
-      'webClientId':'55061482212-if2hs6c0rrskehvjllprnc116fr3krdh.apps.googleusercontent.com',
+      'webClientId':'55061482212-o4g482roouua2f37uc683svnvrmfa2nj.apps.googleusercontent.com',
       'offline':true,
       'scopes':'profile email'
     }).then(res=>{
