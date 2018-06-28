@@ -21,7 +21,7 @@ export class CropPage {
   @ViewChild('angularCropper') public angularCropper: AngularCropperjsComponent;
   cropperOptions: any;
   croppedImage = null;
-
+  checkCrossOrigin = true;
   myImage = null;
   scaleValX = 1;
   scaleValY = 1;
@@ -32,6 +32,8 @@ export class CropPage {
   imagenDestino: "";
 
   constructor( public provide:DispoProvider,public navCtrl: NavController, public navParams: NavParams) {
+   
+
     this.valla = this.navParams.get('tvalla');
     this.imagenFuente = this.valla.url;
     this.cropperOptions = {
@@ -42,6 +44,7 @@ export class CropPage {
       zoomable: true,
       scalable: true,
       autoCropArea: 0.8,
+      checkCrossOrigin: true,
     }; 
   }
   ionViewDidLoad() {
