@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import * as _ from "lodash";
 import { DispoProvider } from '../../providers/dispo/dispo';
-
+import { AlertController } from 'ionic-angular';
+import { CropPage } from "../crop/crop";
 /**
  * Generated class for the MuestraPage page.
  *
@@ -24,7 +25,7 @@ export class MuestraPage {
   queryText : string;
   datos;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public provide:DispoProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public provide:DispoProvider, public alertCtrl: AlertController) {
     this.tipoValla = this.navParams.get('tvalla');
     this.tipoEstado = this.navParams.get('testado');
     this.municipio = this.navParams.get('municipio');
@@ -34,14 +35,19 @@ export class MuestraPage {
     }
     else if(this.tipoEstado == "Salidas"){
       this.presentado = "danger";
-    }
+    }  
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MuestraPage');
+    /* console.log('ionViewDidLoad MuestraPage'); */
     this.datos = this.provide.obtenerRutas();
   }
 
+  /*
+  +------------------------------------------------+
+  |   INICIAL
+  +------------------------------------------------+
+  */
   actualizarLista()
   {
     //refrescando la lista
@@ -57,6 +63,42 @@ export class MuestraPage {
     this.datos = Filtro;
   }
 
+  /*
+  +------------------------------------------------+
+  |   BOTONES
+  +------------------------------------------------+
+  */
+  clckAgregar(item) { 
+   
+    if (this.provide.estaRepetidaValla(item)) {  
+      this.Mensaje("Ya existe una valla con el mismo código en la presentación");
+    } else {
+      this.navCtrl.push(CropPage, {
+        tvalla: item,
+      });
+    }
+  }
+
+  clckCortar() {
+    this.navCtrl.push(CropPage);
+  }
+ 
+
+
+  /*
+  +------------------------------------------------+
+  |   Mensajes
+  +------------------------------------------------+
+  */
+
+  Mensaje(mensaje) {
+    const alerta = this.alertCtrl.create({
+      title: '¡Mensaje!',
+      subTitle: mensaje,
+      buttons: ['OK']
+    });
+    alerta.present();
+  }
 
 
 }

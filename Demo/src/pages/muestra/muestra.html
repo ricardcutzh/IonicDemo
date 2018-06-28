@@ -30,8 +30,11 @@
         <p>Medidas: {{dato.alto}} x {{dato.ancho}} mts</p>
         <p>Acabado: {{dato.acabado}}</p>
         <p>Ubicación: {{dato.ubicacion}}</p>
-        <p><button ion-button full color="secondary">Agregar a Presentación</button></p>
+        <p><button *ngIf="!provide.estaRepetidaValla(dato.codigo)" ion-button full (click)="clckAgregar(dato)"  color="secondary">Agregar a Presentación</button></p>
       </ion-card-content>
-    </ion-card>
+    </ion-card> 
   </div>
+
+  <!-- <button ion-button full (click)="clckCortar()">cortar</button>
+  <button ion-button full (click)="provide.eliminarPresentacion()">Clean</button> -->
 </ion-content>

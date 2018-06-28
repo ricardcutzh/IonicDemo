@@ -34,7 +34,7 @@ export class HomePage {
     else
     {
       this.esWeb = true;
-    }
+    }  
   }
   //METODO PARA INGRESAR (UTILIZA INFORMACION ESTATICA)
   Ingresar()

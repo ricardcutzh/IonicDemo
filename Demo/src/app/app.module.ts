@@ -12,11 +12,17 @@ import { PresentacionPage } from '../pages/presentacion/presentacion';
 import { TabsPage } from '../pages/tabs/tabs';
 import { PerfilPage } from '../pages/perfil/perfil';
 import { MuestraPage } from "../pages/muestra/muestra";
+import { CropPage } from "../pages/crop/crop";
 import { DispoProvider } from '../providers/dispo/dispo';
 import { HttpClientModule } from "@angular/common/http";
 import { GooglePlus } from "@ionic-native/google-plus";
 import { AngularFireModule } from "angularfire2";
 import firebase from "firebase";
+//CROP
+import { AngularCropperjsModule } from 'angular-cropperjs'; 
+//PDF
+import { File } from '@ionic-native/file';
+import { FileOpener } from '@ionic-native/file-opener';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyATdIknMzUx3QNn0d0qV1SvlGd5H73_GKc",
@@ -37,14 +43,17 @@ firebase.initializeApp(firebaseConfig);
     PresentacionPage,
     TabsPage,
     PerfilPage,
-    MuestraPage
+    MuestraPage,
+    CropPage
   ],
   imports: [
     BrowserModule,
     //IMPORTACION DEL HTTP MODULO
     HttpClientModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    //PARA RECORTAR
+    AngularCropperjsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -55,14 +64,17 @@ firebase.initializeApp(firebaseConfig);
     PresentacionPage,
     TabsPage,
     PerfilPage,
-    MuestraPage
+    MuestraPage,
+    CropPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     DispoProvider,
-    GooglePlus
+    GooglePlus,  
+    File,
+    FileOpener
   ]
 })
 export class AppModule {}

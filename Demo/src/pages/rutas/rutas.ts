@@ -23,8 +23,7 @@ export class RutasPage {
   queryText: string;
   constructor(public navCtrl: NavController, public navParams: NavParams, public provider: DispoProvider) {
     this.tipoValla = this.navParams.get('tvalla');
-    this.tipoEstado = this.navParams.get('testado');
-
+    this.tipoEstado = this.navParams.get('testado'); 
   }
 
   ionViewDidLoad() {
@@ -61,6 +60,5 @@ export class RutasPage {
       }
     });
     this.datos = Filtro;
-
   }
 }
