@@ -75,7 +75,11 @@ export class MuestraPage {
     if (this.provide.estaRepetidaValla(item)) {
       this.Mensaje("Ya existe una valla con el mismo código en la presentación");
     } else { 
-      var imagen = new Image();
+      
+      this.navCtrl.push(CropPage, {
+        tvalla: item,
+      });
+      /* var imagen = new Image();
       imagen.crossOrigin = "Anonymous";
       var canvas = document.createElement("canvas");
       imagen.addEventListener("load", e => {
@@ -92,7 +96,7 @@ export class MuestraPage {
       imagen.src = item.url;  
       if (imagen.complete || imagen.complete === undefined) {
         imagen.src = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==";
-      }
+      } */
 
       //ahora hay que descargar la imagen 
       //con el codigo como nombre del archivo
