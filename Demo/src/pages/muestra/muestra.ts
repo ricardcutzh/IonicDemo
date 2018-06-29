@@ -76,7 +76,7 @@ export class MuestraPage {
       this.Mensaje("Ya existe una valla con el mismo código en la presentación");
     } else { 
       var imagen = new Image();
-      //imagen.crossOrigin = "anonymous";
+      imagen.crossOrigin = "Anonymous";
       var canvas = document.createElement("canvas");
       imagen.addEventListener("load", e => {
         canvas.width = imagen.width;
