@@ -60,11 +60,12 @@ export class PresentacionPage {
     if (this.plt.is('cordova')) {
       this.pdfObj.getBuffer((buffer) => {
         var blob = new Blob([buffer], { type: 'application/pdf' });
+        //ESTO LO EDITE PORQUE AL PARECER NO SE USA EL externalDataDirectory SINO SOLO DATADIRECTORY
 
         // Save the PDF to the data Directory of our App
-        this.file.writeFile(this.file.externalDataDirectory, 'myletter.pdf', blob, { replace: true }).then(fileEntry => {
+        this.file.writeFile(/*this.file.externalDataDirectory*/ this.file.dataDirectory, 'archivo.pdf', blob, { replace: true }).then(fileEntry => {
           // Open the PDf with the correct OS tools
-          this.fileOpener.open(this.file.externalDataDirectory + 'myletter.pdf', 'application/pdf');
+          this.fileOpener.open(/*this.file.externalDataDirectory*/ this.file.dataDirectory + 'archivo.pdf', 'application/pdf');
         })
       });
     } else {

@@ -27,14 +27,14 @@ export class HomePage {
 
   ionViewDidLoad()
   {
-    /* if(this.platform.is('cordova'))
+    if(this.platform.is('cordova'))
     {
       this.esWeb = false;
     } 
     else
     {
       this.esWeb = true;
-    }   */
+    }
   }
   //METODO PARA INGRESAR (UTILIZA INFORMACION ESTATICA)
   Ingresar()
