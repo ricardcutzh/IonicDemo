@@ -14,7 +14,7 @@ import { PerfilPage } from '../pages/perfil/perfil';
 import { MuestraPage } from "../pages/muestra/muestra";
 import { CropPage } from "../pages/crop/crop";
 import { DispoProvider } from '../providers/dispo/dispo';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule } from "@angular/common/http"; 
 import { GooglePlus } from "@ionic-native/google-plus";
 import { AngularFireModule } from "angularfire2";
 import firebase from "firebase";
@@ -23,6 +23,7 @@ import { AngularCropperjsModule } from 'angular-cropperjs';
 //PDF
 import { File } from '@ionic-native/file';
 import { FileOpener } from '@ionic-native/file-opener';
+import { FileTransfer } from '@ionic-native/file-transfer';
 
 export const firebaseConfig = {
     apiKey: "AIzaSyATdIknMzUx3QNn0d0qV1SvlGd5H73_GKc",
@@ -53,7 +54,7 @@ firebase.initializeApp(firebaseConfig);
     AngularFireModule.initializeApp(firebaseConfig),
     IonicModule.forRoot(MyApp),
     //PARA RECORTAR
-    AngularCropperjsModule
+    AngularCropperjsModule, 
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -74,7 +75,8 @@ firebase.initializeApp(firebaseConfig);
     DispoProvider,
     GooglePlus,  
     File,
-    FileOpener
+    FileOpener,
+    FileTransfer
   ]
 })
 export class AppModule {}

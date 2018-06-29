@@ -10,5 +10,8 @@
 ------------------------------------------------
 |     RECORDATORIOS                            |
 ------------------------------------------------
-
-
+-----------------------
+| Para transferir archivos
+-----------------------
+$ ionic cordova plugin add cordova-plugin-file-transfer
+$ npm install --save @ionic-native/file-transfer
