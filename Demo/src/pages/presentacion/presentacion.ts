@@ -60,7 +60,7 @@ export class PresentacionPage {
     if (this.plt.is('cordova')) {
       this.pdfObj.getBuffer((buffer) => {
         var blob = new Blob([buffer], { type: 'application/pdf' });
-        //ESTO LO EDITE PORQUE AL PARECER NO SE USA EL externalDataDirectory SINO SOLO DATADIRECTORY
+        //ESTO LO EDITE PORQUE AL PARECER NO SE USA EL externalDataDirectory SINO SOLO DATADIRECTORY PARA DISPOSITIVOS IOS
 
         // Save the PDF to the data Directory of our App
         this.file.writeFile(/*this.file.externalDataDirectory*/ this.file.dataDirectory, 'archivo.pdf', blob, { replace: true }).then(fileEntry => {
